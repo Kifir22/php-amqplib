@@ -33,7 +33,7 @@ class ConnectionCreationTest extends AbstractConnectionTest
     /**
      * @test
      * @dataProvider hostDataProvider
-     * @covers \PhpAmqpLib\Connection\AbstractConnection::create_connection()
+     * @covers \PhpAmqpLib\Connection\AMQPStreamConnection::create_connection()
      */
     public function create_connection(array $hosts)
     {

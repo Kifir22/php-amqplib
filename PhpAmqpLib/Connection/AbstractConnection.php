@@ -1137,6 +1137,14 @@ abstract class AbstractConnection extends AbstractChannel
         throw $latest_exception;
     }
 
+    /*
+     * due to incompatibility 5.6 there is no way to make a method abstract, although it is
+     */
+    protected static function try_create_connection($host, $port, $user, $password, $vhost, $options)
+    {
+        throw \Exception('Abstract function plug');
+    }
+
     public static function validate_host($host) {
         if(!isset($host['host'])){
             throw new \InvalidArgumentException("'host' key is required.");

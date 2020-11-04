@@ -44,7 +44,7 @@ class AMQPSSLConnection extends AMQPStreamConnection
         );
     }
 
-    public static function try_create_connection($host, $port, $user, $password, $vhost, $options) {
+    protected static function try_create_connection($host, $port, $user, $password, $vhost, $options) {
         $ssl_options = isset($options['ssl_options']) ? $options['ssl_options'] : [];
         return new static($host, $port, $user, $password, $vhost, $ssl_options, $options);
     }
